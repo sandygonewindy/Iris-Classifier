@@ -1,0 +1,28 @@
+{% extends 'layout.html' %}
+
+{% block stylesheet %}
+    <link rel="stylesheet" type = "text/css" href="{{ url_for('static', filename='index.css')  }}">
+{% endblock %}
+
+{% block title %}
+    Home
+{% endblock %}
+
+{% block body %}
+    <h2>Flower Characteristics</h2>
+    <form action="/classify" method="post">
+        <label for="s-length">Sepal Length</label>
+        <input autofocus type="number" name="s-length" step="0.01" id="s-length">
+        
+        <label for="s-width">Sepal Width</label>
+        <input type="number" name="s-width" step="0.01" id="s-width">
+        
+        <label for="p-length">Petal Length</label>
+        <input type="number" name="p-length" step="0.01" id="p-length">
+        
+        <label for="p-width">Petal Width</label>
+        <input type="number" name="p-width" step="0.01" id="p-width">
+        <input type="submit" value="Classify">
+    </form>
+{% endblock %}
+

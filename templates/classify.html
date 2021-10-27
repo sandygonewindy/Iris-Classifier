@@ -1,0 +1,22 @@
+{% extends 'layout.html' %}
+
+{% block stylesheet %}
+    <link rel="stylesheet" type = "text/css" href="{{ url_for('static', filename='classify.css')  }}">
+{% endblock %}
+
+{% block title %}
+    Classify
+{% endblock %}
+
+{% block body %}
+    <h2>{{ species }}</h2>
+    {% if species == 'setosa' %}
+        <img src="{{ url_for('static', filename='images/setosa.jpg')  }}" alt="">
+    {% elif species == 'versicolor' %}
+        <img src="{{ url_for('static', filename='images/versicolor.jpg')  }}" alt="">
+    {% else %}
+        <img src="{{ url_for('static', filename='images/virginica.jpg')  }}" alt="">
+    {% endif %}
+
+{% endblock %}
+    
